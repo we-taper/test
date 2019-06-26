@@ -1,0 +1,37 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+variables:
+- group: rahko-py-twine
+- group: rahko-codecov
+
+jobs:
+- job: 'Test'
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  strategy:
+    matrix:
+      Python37:
+        python.version: '3.7'
+    maxParallel: 3
+
+  steps:
+  - script: |
+      echo "Publishing document for development version $(Build.BuildId)"
+      pip install -U sphinx
+    displayName: 'Make Document and Publish'
+
+- job: 'Publish'
+  dependsOn: 'Test'
+
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.x'
+      architecture: 'x64'
+
+  - script: |
+      echo "TEST SPHINX"
+      sphinx-build
