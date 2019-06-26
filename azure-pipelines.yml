@@ -16,6 +16,8 @@ jobs:
   steps:
   - script: python -m pip install --upgrade pip
     displayName: 'Install dependencies'
+  - script: pip install --upgrade pip
+    displayName: 'Update pip'
   - script: |
       echo "Publishing document for development version $(Build.BuildId)"
       pip install -U sphinx
