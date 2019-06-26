@@ -3,10 +3,6 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-variables:
-- group: rahko-py-twine
-- group: rahko-codecov
-
 jobs:
 - job: 'Test'
   pool:
