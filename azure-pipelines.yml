@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 jobs:
-- job: 'Test'
+- job: 'J1'
   pool:
     vmImage: 'Ubuntu-16.04'
   strategy:
@@ -19,10 +19,10 @@ jobs:
   - script: |
       echo "Publishing document for development version $(Build.BuildId)"
       pip install -U sphinx
-    displayName: 'Make Document and Publish'
+    displayName: 'TEST J1'
 
-- job: 'Publish'
-  dependsOn: 'Test'
+- job: 'J2'
+  dependsOn: 'J1'
 
   steps:
   - task: UsePythonVersion@0
