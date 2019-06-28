@@ -28,7 +28,7 @@ jobs:
     displayName: 'TEST J1'
   - script: |
       echo "TEST SPHINX"
-      sphinx-build
+      sphinx-build --help
     displayName: 'TEST SPHINX'
 
 - job: 'J2'
@@ -42,5 +42,5 @@ jobs:
 
   - script: |
       echo "TEST SPHINX"
-      sphinx-build
+      sphinx-build --help
     displayName: 'TEST SPHINX'
