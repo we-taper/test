@@ -26,6 +26,10 @@ jobs:
       echo "Publishing document for development version $(Build.BuildId)"
       pip install -U sphinx
     displayName: 'TEST J1'
+  - script: |
+      echo "TEST SPHINX"
+      sphinx-build
+    displayName: 'TEST SPHINX'
 
 - job: 'J2'
   dependsOn: 'J1'
