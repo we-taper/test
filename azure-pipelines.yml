@@ -46,5 +46,5 @@ jobs:
 
   - script: |
       echo "TEST SPHINX"
-      sphinx-build --help
+      /opt/hostedtoolcache/Python/3.7.2/x64/bin/sphinx-build --help
     displayName: 'TEST SPHINX'
