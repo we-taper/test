@@ -30,6 +30,10 @@ jobs:
       echo "TEST SPHINX"
       sphinx-build --help
     displayName: 'TEST SPHINX'
+  - script: |
+      echo "Show SPHINX path"
+      command -v sphinx-build
+    displayName: 'Show Sphinx Path'
 
 - job: 'J2'
   dependsOn: 'J1'
