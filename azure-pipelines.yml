@@ -5,12 +5,7 @@
 
 # specific branch build
 trigger:
-  branches:
-    include:
-    - master
-    - releases/*
-    exclude:
-    - '*'
+  - master
 
 jobs:
 - job: 'J1'
